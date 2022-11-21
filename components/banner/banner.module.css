@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   position: relative;
 }
 
@@ -73,8 +73,9 @@
 .bannerImg {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   bottom: 0px;
+
   --tw-gradient-stops: var(--tw-gradient-from),
     var(--tw-gradient-to, rgba(0, 0, 0, 0));
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
@@ -82,6 +83,7 @@
   --tw-gradient-from: var(--black);
 
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: "50% 50%";
 }
 

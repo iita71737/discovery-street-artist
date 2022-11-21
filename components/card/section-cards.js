@@ -5,13 +5,16 @@ import styles from "./section-cards.module.css";
 
 const SectionCards = (props) => {
   const { title, videos = [], size, shouldWrap = false, shouldScale } = props;
+
+  console.log(videos,'=-videos')
+
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>{title}</h2>
       <div className={clsx(styles.cardWrapper, shouldWrap && styles.wrap)}>
         {videos.map((video, idx) => {
           return (
-            <Link href={`/video/${video.id}`} key={video.id}>
+            <Link href={`/video/${video.videoId}`} key={video.id}>
               <a>
                 <Card
                   id={idx}

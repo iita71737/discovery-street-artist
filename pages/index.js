@@ -25,14 +25,13 @@ export async function getServerSideProps(context) {
       },
     };
   }
+
   const watchItAgainVideos = await getWatchItAgainVideos(userId, token);
-
-  const disneyVideos = await getVideos("disney trailer");
+  const disneyVideos = await getVideos("disney");
   const productivityVideos = await getVideos("Productivity");
-
   const travelVideos = await getVideos("indie music");
-
   const popularVideos = await getPopularVideos();
+  
   return {
     props: {
       disneyVideos,
@@ -55,20 +54,20 @@ export default function Home({
     <div className={styles.container}>
       <Head>
         <title>Netflix</title>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
       <div className={styles.main}>
         <NavBar />
         <Banner
           videoId="4zH5iYM4wJo"
-          title="Clifford the red dog"
-          subTitle="a very cute dog"
-          imgUrl="/static/clifford.webp"
+          title="Walking Mibo"
+          subTitle="a very cute street artist"
+          imgUrl="/static/DL_01426-cut.jpg"
         />
 
         <div className={styles.sectionWrapper}>
-          <SectionCards title="Disney" videos={disneyVideos} size="large" />
+          <SectionCards title="Mibo" videos={disneyVideos} size="large" />
           <SectionCards
             title="Watch it again"
             videos={watchItAgainVideos}
